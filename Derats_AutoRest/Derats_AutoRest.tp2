@@ -1,0 +1,51 @@
+BACKUP ~Derats_AutoRest/backup~
+AUTHOR ~Deratiseur, at deratiseur@free.fr~
+
+ALWAYS
+	DEFINE_PATCH_FUNCTION DRAZDISS	BEGIN
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 58 target = 2 timing = 1	END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 77 target = 2 timing = 1	END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 81 target = 2 timing = 1	END
+	END
+END
+
+LANGUAGE ~Francais~	~French~
+	~Derats_AutoRest/Languages/French/Setup.tra~
+LANGUAGE ~English~	~English~
+	~Derats_AutoRest/Languages/English/Setup.tra~
+
+BEGIN @11 SUBCOMPONENT @10
+EXTEND_TOP ~DPLAYER2.bcs~ ~Derats_AutoRest/Drazres2.baf~
+EXTEND_TOP ~DPLAYER3.bcs~ ~Derats_AutoRest/Drazres2.baf~
+
+BEGIN @12 SUBCOMPONENT @10
+EXTEND_TOP ~BALDUR.bcs~ ~Derats_AutoRest/Drazres1.baf~
+
+BEGIN @13 SUBCOMPONENT @10
+EXTEND_TOP ~BALDUR.bcs~ ~Derats_AutoRest/Drazres1.baf~
+EXTEND_TOP ~DPLAYER2.bcs~ ~Derats_AutoRest/Drazres2.baf~
+EXTEND_TOP ~DPLAYER3.bcs~ ~Derats_AutoRest/Drazres2.baf~
+
+BEGIN @2 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres1.spl~	~override/Drazrest.spl~	WRITE_BYTE 0xce 0	WRITE_BYTE 0xd2 0	WRITE_BYTE 0xe6 3	WRITE_BYTE 0xea 8
+
+BEGIN @3 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres1.spl~	~override/Drazrest.spl~	WRITE_BYTE 0xce 0	WRITE_BYTE 0xd2 0	WRITE_BYTE 0xe6 3	WRITE_BYTE 0xea 8	LPF DRAZDISS END
+
+BEGIN @4 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres1.spl~	~override/Drazrest.spl~
+
+BEGIN @5 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres1.spl~	~override/Drazrest.spl~	LPF DRAZDISS END
+
+BEGIN @6 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres2.spl~	~override/Drazrest.spl~
+
+BEGIN @7 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres2.spl~	~override/Drazrest.spl~	LPF DRAZDISS END
+
+BEGIN @8 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres3.spl~	~override/Drazrest.spl~
+
+BEGIN @9 SUBCOMPONENT @1
+COPY	~Derats_AutoRest/Drazres3.spl~	~override/Drazrest.spl~	LPF DRAZDISS END

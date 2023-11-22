@@ -1,0 +1,13 @@
+@1 = ~Choisissez la puissance du repos~
+@2 = ~tous les sorts rendus + 3D8 pvs rendus~
+@3 = ~tous les sorts rendus + 3D8 pvs rendus + dissipation 100%~
+@4 = ~tous les sorts rendus + Guerison~
+@5 = ~tous les sorts rendus + Guerison + dissipation 100%~
+@6 = ~tous les sorts rendus + Restauration majeure~
+@7 = ~tous les sorts rendus + Restauration majeure + dissipation 100%~
+@8 = ~tous les sorts rendus + Resurrection + Restauration majeure~
+@9 = ~tous les sorts rendus + Resurrection + Restauration majeure + dissipation 100%~
+@10 = ~Comment le repos est-il simule ?~
+@11 = ~En appuyant sur la touche D~
+@12 = ~Automatique apres chaque combat~
+@13 = ~Automatique apres chaque combat + en appuyant sur la touche D~
