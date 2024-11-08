@@ -5,7 +5,7 @@
 ![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG2%20%7C%20BGT%20%7C%20BGEE%20%7C%20BG2EE%20%7C%20EET%20%7C%20IWDEE%20%7C&color=dodgerblue)
 ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Deratiseur/Follower_It/total)
 
-**Autor** : **Dératiseur**
+**Autor** : **Deratiseur**
 
 [Link to original Mod Forum](https://www.baldursgateworld.fr/viewtopic.php?t=33320)
 
