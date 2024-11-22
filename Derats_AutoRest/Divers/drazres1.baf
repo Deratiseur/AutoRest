@@ -1,0 +1,21 @@
+IF
+	!ActuallyInCombat()
+	GlobalGT("DRAZrest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("Drazrest",player1)
+		ReallyForceSpellRES("Drazrest",player2)
+		ReallyForceSpellRES("Drazrest",player3)
+		ReallyForceSpellRES("Drazrest",player4)
+		ReallyForceSpellRES("Drazrest",player5)
+		ReallyForceSpellRES("Drazrest",player6)
+		SetGlobal("DRAZrest","GLOBAL",0)
+END
+
+IF
+	ActuallyInCombat()
+	Global("DRAZrest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DRAZrest","GLOBAL",1)
+END

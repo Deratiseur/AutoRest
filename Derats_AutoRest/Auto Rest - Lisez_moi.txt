@@ -1,0 +1,58 @@
+Ce module a été crée à la demande de DrAzTIK, qui souhaitait pouvoir récupérer ses sorts entre chaque combat, comme dans Dragon Age Origin (ou Pillars of Eternity)
+
+Le module comporte deux composants :
+1 : Repos automatique :
+Au choix : Comment appliquer le repos :
+- En appuyant sur une touche (D, non configurable). Cela simule un repos dans le jeu
+- Automatique après chaque combat. Cela simule les comportement des jeux récents comme Pillars of Eternity ou Dragon Age Origine
+- Les deux. Parce qu'il n'y a pas toujours un combat pour déclencher le script de fin de combat.
+
+Au choix : Quel repos ?
+- tous les sorts rendus + 3D8 pvs rendus
+- tous les sorts rendus + 3D8 pvs rendus + dissipation 100%
+- tous les sorts rendus + Guérison
+- tous les sorts rendus + Guérison + dissipation 100%
+- tous les sorts rendus + Restauration majeure
+- tous les sorts rendus + Restauration majeure + dissipation 100%
+- tous les sorts rendus + Résurrection + Restauration majeure~
+- tous les sorts rendus + Résurrection + Restauration majeure + dissipation 100%
+
+2 : Les joueurs ne peuvent pas mourir (nécessite le premier composant)
+Au choix : Quelle façon d'éviter la mort ?
+- Points de vie minimum fixés à 1 (les joueurs peuvent toujours mourir par sorts/effets de mort/pétrification/désintégration)
+- Points de vie minimum fixés à 1 + mort simulée (quand les joueurs sont à 1 ou 2 pvs ils deviennent inutilisables et sont remplacés par une pierre tombale)(qui dure jusqu'à la fin du combat ou appui sur la touche D, suivant ce qui a été choisi pour le premier composant)
+- Points de vie minimum fixés à 1 + Immunité à toutes les formes de mort (mais les pjs peuvent toujours mourir par une caractéristique mise à 0 (Illithids))
+- Points de vie minimum fixés à 1 + mort simulée + Immunité à toutes les formes de mort
+
+Attention : la Mort simulée présente un inconvénient : les joueurs "morts" remplacés par une pierre tombales ne fonts plus tourner de script et donc ne répondent pas à la touche D. Donc si TOUS les joueurs sont "morts" vous ne pouvez plus sortir de ce mode, et vous devez recharger.
+Vous pouvez considérer que si TOUS les joueurs sont "morts", c'est le game-over.
+
+
+
+
+Notes :
+- L'appui sur la touche D ne marche pas si l'IA est désactivée. Le repos "automatique après la fin d'un combat" est toujours actif.
+- la guérison totale simule l'option légale "repos jusqu'à guérison".
+- la dissipation 100% simule la dissipation des buffs après repos.
+- la simulation du repos standard est "3D8 pvs rendus ou guérison, + dissipation, en appuyant sur la touche D". Toutes les autres combinaisons sont de la triche. (Et encore, l'appui sur la touche D ne s’encombre pas de vérifier si des ennemis sont présents ou si la zone n'autorise pas le repos).
+- Si vous voulez modifier la touche nécessaire pour activer le repos, il vous suffit d’éditer le fichier "drazres2.baf" (avant d'installer) et de changer la ligne "HotKey(D)" par "HotKey(la touche que vous voulez)"
+
+
+
+
+Historique de versions :
+version 0.5 Beta : première version, repos + guérison automatique après chaque combat.
+version 1 : Ajout de "repos + restauration majeure".
+version 2 : Ajout de "repos + restauration majeure + résurrection"
+			Ajout de la gestion "par appui sur la touche D".
+version 3 : Ajout de la dissipation possible.
+version 4 : Correction de la gestion "par appui sur la touche D".
+			Suppression d'une étape de choix à l'installation.
+			Ajout de la guérison limitée à 3D8.
+			Ajout du lisez_moi.
+Version 5 : Ajout de la traduction en anglais.
+Version 6 : Ajout de l'option "Les joueurs ne peuvent pas mourir" avec ses sous-composants.
+			Suppression du "no log" dans le TP2 (qui pouvait cumuler les appends dans les scripts).
+			Ajout du readme anglais.
+			Ajout de la routine pour installer le mod sur OBG2/BGT.
+			Les options du composant principal et le deuxième composant nécessitent maintenant le composant principal.
