@@ -13,12 +13,12 @@
 ## Description:
 ------------
 
-Un mod qui fait "repos automatique" après chaque combat ou en appuyant sur une touche.
+Un mod qui fait "repos automatique" après chaque combat ou en appuyant sur la touche D.
 
 Une option permet aussi de ne plus avoir à gérer la mort des joueurs.
 
 ------------
 
-A mod that do "automatic rest" after each fight or by pressing a key.
+A mod that do "automatic rest" after each fight or by pressing the D key.
 
 An option also removes the need to manage player deaths.
