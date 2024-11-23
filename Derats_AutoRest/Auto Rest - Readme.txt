@@ -54,3 +54,5 @@ Version 6: 	Added "Players can't die" option with its subcomponents.
 			Added English readme.
 			Added routine for installing mod on OBG2/BGT.
 			Options for the main component and the second component now require the main component.
+Version 6.1: The OBG2 routine is useless.
+			Missing sring error corrected (typo error).

@@ -1,20 +1,8 @@
 BACKUP ~Derats_AutoRest/backup~
 AUTHOR ~Deratiseur, at the_deratiseur@hotmail.com~
-VERSION ~v6~
+VERSION ~v6.1~
 
-ALWAYS
-	ACTION_DEFINE_ARRAY px_reload BEGIN
-		~Setup.tra~
-		END
-		ACTION_DEFINE_ARRAY px_noconvert BEGIN END
-			LAF HANDLE_CHARSETS
-			INT_VAR
-			infer_charset = 1
-			STR_VAR
-			tra_path = EVAL ~%MOD_FOLDER%/Languages~
-			noconvert_array = px_noconvert
-			reload_array = px_reload
-		END	
+ALWAYS	
 	DEFINE_PATCH_FUNCTION DRAZDISS	BEGIN
 	LPF ADD_SPELL_EFFECT INT_VAR opcode = 58 target = 2 timing = 1	END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode = 77 target = 2 timing = 1	END
@@ -81,14 +69,14 @@ REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_I
 COPY	~Derats_AutoRest/Divers/Drazres2.spl~	~override/Drazrest.spl~	LPF DRAZDISS END	LPF ADD_SPELL_EFFECT INT_VAR opcode = 32 target = 2	insert_point = 0 END
 
 BEGIN @15 SUBCOMPONENT @14	DESIGNATED 31
-REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @29
+REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @19
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY_EXISTING	~Drazrest.spl~					~override~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 2 timing = 1 parameter2 = 1 insert_point = 0 STR_VAR resource = drazmort END
 COPY	~Derats_AutoRest/Divers/Drazmort.spl~	~override~
 
 BEGIN @16 SUBCOMPONENT @14	DESIGNATED 32
-REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @29
+REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @19
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY_EXISTING	~Drazrest.spl~					~override~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 2 timing = 1 parameter2 = 1 insert_point = 0 STR_VAR resource = drazmort END
@@ -105,14 +93,14 @@ FOR (i = 0; i < num_effects; i += 1) BEGIN
 END
 
 BEGIN @17 SUBCOMPONENT @14	DESIGNATED 33
-REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @29
+REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @19
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY_EXISTING	~Drazrest.spl~				~override~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 2 timing = 1 parameter2 = 1 insert_point = 0 STR_VAR resource = drazmort END
 COPY	~Derats_AutoRest/Divers/Drazmort.spl~	~override~	LPF DRAZMORT END
 
 BEGIN @18 SUBCOMPONENT @14	DESIGNATED 34
-REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @29
+REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @19
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY_EXISTING	~Drazrest.spl~				~override~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 2 timing = 1 parameter2 = 1 insert_point = 0 STR_VAR resource = drazmort END

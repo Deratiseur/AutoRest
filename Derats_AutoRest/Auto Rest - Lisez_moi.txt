@@ -56,3 +56,5 @@ Version 6 : Ajout de l'option "Les joueurs ne peuvent pas mourir" avec ses sous-
 			Ajout du readme anglais.
 			Ajout de la routine pour installer le mod sur OBG2/BGT.
 			Les options du composant principal et le deuxième composant nécessitent maintenant le composant principal.
+Version 6.1 : Le routine pour OBG2 est inutile.
+			Correction d'une erreur de sring manquant (erreur de typo).
