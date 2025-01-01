@@ -24,8 +24,12 @@ Your choice: How to avoid death?
 - Minimum hit points set at 1 + Immunity to all forms of death (but pjs can still die from a characteristic set to 0 (Illithids))
 - Minimum hit points set at 1 + simulated death + Immunity to all forms of death
 
-Warning: Simulated Death has one drawback: "dead" players replaced by a tombstone no longer run scripts and therefore don't respond to the D key. So if ALL players are "dead", you can't exit this mode, and you have to reload.
+Notes:
+- For player immortality to take effect, you must have activated Automatic Rest at least once.
+- In IWDEE, outdoors on snow, the tombstone is invisible. I haven't found a way to correct this.
+- Warning : Simulated Death has one drawback: "dead" players replaced by a tombstone no longer run scripts and therefore don't respond to the D key. No worries if other players can respond to the key, but if ALL players are "dead" you can't exit this mode, and you have to reload.
 You can consider that if ALL players are "dead", it's game-over.
+
 
 
 
@@ -56,3 +60,6 @@ Version 6: 	Added "Players can't die" option with its subcomponents.
 			Options for the main component and the second component now require the main component.
 Version 6.1: The OBG2 routine is useless.
 			Missing sring error corrected (typo error).
+Version 7: 	Added a clarification in the readme about the triggering of players immortality.
+			Improved integration in IWDEE.
+			Added (limited) PSTEE support.

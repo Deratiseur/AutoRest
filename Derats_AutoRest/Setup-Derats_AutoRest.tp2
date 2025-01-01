@@ -1,6 +1,6 @@
 BACKUP ~Derats_AutoRest/backup~
 AUTHOR ~Deratiseur, at the_deratiseur@hotmail.com~
-VERSION ~v6.1~
+VERSION ~v7~
 
 ALWAYS	
 	DEFINE_PATCH_FUNCTION DRAZDISS	BEGIN
@@ -24,13 +24,20 @@ LANGUAGE ~English~	~English~
 	~Derats_AutoRest/Languages/English/Setup.tra~
 
 BEGIN @11 SUBCOMPONENT @10	DESIGNATED 11
+ACTION_IF GAME_IS ~BGT TOB BGEE BG2EE EET IWDEE~ THEN BEGIN
 EXTEND_TOP ~DPLAYER2.bcs~ ~Derats_AutoRest/Divers/Drazres2.baf~
 EXTEND_TOP ~DPLAYER3.bcs~ ~Derats_AutoRest/Divers/Drazres2.baf~
+END
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+EXTEND_TOP ~PCNAME.bcs~ ~Derats_AutoRest/Divers/Drazres2.baf~
+END
 
 BEGIN @12 SUBCOMPONENT @10	DESIGNATED 12
+REQUIRE_PREDICATE GAME_IS ~TOB BGT BGEE BG2EE EET IWDEE~ @10
 EXTEND_TOP ~BALDUR.bcs~ ~Derats_AutoRest/Divers/Drazres1.baf~
 
 BEGIN @13 SUBCOMPONENT @10	DESIGNATED 13
+REQUIRE_PREDICATE GAME_IS ~TOB BGT BGEE BG2EE EET IWDEE~ @10
 EXTEND_TOP ~BALDUR.bcs~ ~Derats_AutoRest/Divers/Drazres1.baf~
 EXTEND_TOP ~DPLAYER2.bcs~ ~Derats_AutoRest/Divers/Drazres2.baf~
 EXTEND_TOP ~DPLAYER3.bcs~ ~Derats_AutoRest/Divers/Drazres2.baf~
@@ -38,38 +45,62 @@ EXTEND_TOP ~DPLAYER3.bcs~ ~Derats_AutoRest/Divers/Drazres2.baf~
 BEGIN @2 SUBCOMPONENT @1	DESIGNATED 21
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres1.spl~	~override/Drazrest.spl~	WRITE_BYTE 0xce 0	WRITE_BYTE 0xd2 0	WRITE_BYTE 0xe6 3	WRITE_BYTE 0xea 8
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @3 SUBCOMPONENT @1	DESIGNATED 22
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres1.spl~	~override/Drazrest.spl~	WRITE_BYTE 0xce 0	WRITE_BYTE 0xd2 0	WRITE_BYTE 0xe6 3	WRITE_BYTE 0xea 8	LPF DRAZDISS END
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @4 SUBCOMPONENT @1	DESIGNATED 23
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres1.spl~	~override/Drazrest.spl~
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @5 SUBCOMPONENT @1	DESIGNATED 24
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres1.spl~	~override/Drazrest.spl~	LPF DRAZDISS END
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @6 SUBCOMPONENT @1	DESIGNATED 25
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres2.spl~	~override/Drazrest.spl~
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @7 SUBCOMPONENT @1	DESIGNATED 26
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres2.spl~	~override/Drazrest.spl~	LPF DRAZDISS END
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @8 SUBCOMPONENT @1	DESIGNATED 27
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres2.spl~	~override/Drazrest.spl~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 32 target = 2	insert_point = 0 END
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @9 SUBCOMPONENT @1	DESIGNATED 28
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY	~Derats_AutoRest/Divers/Drazres2.spl~	~override/Drazrest.spl~	LPF DRAZDISS END	LPF ADD_SPELL_EFFECT INT_VAR opcode = 32 target = 2	insert_point = 0 END
+ACTION_IF GAME_IS ~PSTEE~ THEN BEGIN
+COPY_EXISTING ~Drazrest.spl~	~override~	LPF DELETE_EFFECT INT_VAR match_opcode = 139 END
+END
 
 BEGIN @15 SUBCOMPONENT @14	DESIGNATED 31
-REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @19
+REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE PSTEE~ @19
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY_EXISTING	~Drazrest.spl~					~override~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 2 timing = 1 parameter2 = 1 insert_point = 0 STR_VAR resource = drazmort END
@@ -91,9 +122,12 @@ READ_SHORT 0x90 num_effects
 FOR (i = 0; i < num_effects; i += 1) BEGIN			
 	WRITE_BYTE (effects_off + 0x30*i + 0x0c) 9
 END
+ACTION_IF GAME_IS ~IWDEE~ THEN BEGIN
+COPY_EXISTING ~drazmorx.spl~	~override~	WRITE_ASCII 0xae ~#OTILUKE~ #8
+END
 
 BEGIN @17 SUBCOMPONENT @14	DESIGNATED 33
-REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE~ @19
+REQUIRE_PREDICATE GAME_IS ~BGEE BG2EE EET IWDEE PSTEE~ @19
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~11~ OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~12~	OR MOD_IS_INSTALLED ~Setup-Derats_AutoRest.tp2~ ~13~) @20
 COPY_EXISTING	~Drazrest.spl~				~override~
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 2 timing = 1 parameter2 = 1 insert_point = 0 STR_VAR resource = drazmort END
@@ -114,4 +148,7 @@ READ_LONG 0x6a effects_off
 READ_SHORT 0x90 num_effects
 FOR (i = 0; i < num_effects; i += 1) BEGIN			
 	WRITE_BYTE (effects_off + 0x30*i + 0x0c) 9
+END
+ACTION_IF GAME_IS ~IWDEE~ THEN BEGIN
+COPY_EXISTING ~drazmorx.spl~	~override~	WRITE_ASCII 0xae ~#OTILUKE~ #8
 END

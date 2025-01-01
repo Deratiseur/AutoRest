@@ -3,8 +3,8 @@ Ce module a été crée à la demande de DrAzTIK, qui souhaitait pouvoir récupérer s
 Le module comporte deux composants :
 1 : Repos automatique :
 Au choix : Comment appliquer le repos :
-- En appuyant sur une touche (D, non configurable). Cela simule un repos dans le jeu
-- Automatique après chaque combat. Cela simule les comportement des jeux récents comme Pillars of Eternity ou Dragon Age Origine
+- En appuyant sur une touche (D, non configurable). Cela simule un repos dans le jeu. (C'est la seule option disponible dans PSTEE.)
+- Automatique après chaque combat. Cela simule les comportement des jeux récents comme Pillars of Eternity ou Dragon Age Origine.
 - Les deux. Parce qu'il n'y a pas toujours un combat pour déclencher le script de fin de combat.
 
 Au choix : Quel repos ?
@@ -24,7 +24,10 @@ Au choix : Quelle façon d'éviter la mort ?
 - Points de vie minimum fixés à 1 + Immunité à toutes les formes de mort (mais les pjs peuvent toujours mourir par une caractéristique mise à 0 (Illithids))
 - Points de vie minimum fixés à 1 + mort simulée + Immunité à toutes les formes de mort
 
-Attention : la Mort simulée présente un inconvénient : les joueurs "morts" remplacés par une pierre tombales ne fonts plus tourner de script et donc ne répondent pas à la touche D. Donc si TOUS les joueurs sont "morts" vous ne pouvez plus sortir de ce mode, et vous devez recharger.
+Notes 
+- Pour que l’immortalité des joueurs prennent effet vous devez avoir enclenché au moins une fois le Repos automatique.
+- Dans IWDEE, en extérieur sur la neige la pierre tombale est invisible. Je n'ai pas trouvé comment corriger ça.
+- Attention : la Mort simulée présente un inconvénient : les joueurs "morts" remplacés par une pierre tombale ne fonts plus tourner de script et donc ne répondent pas à la touche D. Aucun soucis si d'autres joueurs peuvent répondre à la touche, mais si TOUS les joueurs sont "morts" vous ne pouvez plus sortir de ce mode, et vous devez recharger.
 Vous pouvez considérer que si TOUS les joueurs sont "morts", c'est le game-over.
 
 
@@ -58,3 +61,5 @@ Version 6 : Ajout de l'option "Les joueurs ne peuvent pas mourir" avec ses sous-
 			Les options du composant principal et le deuxième composant nécessitent maintenant le composant principal.
 Version 6.1 : Le routine pour OBG2 est inutile.
 			Correction d'une erreur de sring manquant (erreur de typo).
+Version 7 : Amélioration de l'intégration dans IWDEE.
+			Ajout du support (limité) de PSTEE.
